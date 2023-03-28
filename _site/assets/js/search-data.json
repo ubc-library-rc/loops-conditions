@@ -7,92 +7,98 @@
   },"1": {
     "doc": "Conclusions",
     "title": "Conclusions",
-    "content": "Conclusions . ",
+    "content": "For loops and conditional statements are powerful tools for customized data analysis operations to fit your unique needs. They cut down the length of your code, and can fill the role of functions when they do not meet your needs. ",
     "url": "http://localhost:4000/content/conclusions.html",
     "relUrl": "/content/conclusions.html"
   },"2": {
+    "doc": "Conclusions",
+    "title": "Learning objectives",
+    "content": ". | Perform advanced, custom operations in R to manipulate and analyze data | Expand knowledge, capability, and flexibility with base R | Be able to create a for loop and conditional statement | . For additional assistance, feel free to reach out to the research commons for a 1:1 consultation, or join a future workshop: . | Consultations | Workshops | . ",
+    "url": "http://localhost:4000/content/conclusions.html#learning-objectives",
+    "relUrl": "/content/conclusions.html#learning-objectives"
+  },"3": {
+    "doc": "Workshop",
+    "title": "Introduction",
+    "content": " ",
+    "url": "http://localhost:4000/content/content.html#introduction",
+    "relUrl": "/content/content.html#introduction"
+  },"4": {
+    "doc": "Workshop",
+    "title": "What is a for loop?",
+    "content": "For loops allow you to perform an operation iteratively in R (e.g., instead of repeating lines of code). Most functions you use in R are built using for loops. for (i in x) { . perform some operation using each value of x . } . i stands for iteration, and is set to each value of x in each iteration of the loop . x could be a vector, list, matrix, or any other sequence of values/objects . ",
+    "url": "http://localhost:4000/content/content.html#what-is-a-for-loop",
+    "relUrl": "/content/content.html#what-is-a-for-loop"
+  },"5": {
+    "doc": "Workshop",
+    "title": "What is a conditional statement?",
+    "content": "Conditional statements allow you to perform operations based on a logical statement, and can be used alone, or often more powerfully within a for loop. if (logical statement) { . perform some operation if logical statement is true . } . This logical statement can be anything with an outcome of true/false. We will go over examples of these in the tutorial. ",
+    "url": "http://localhost:4000/content/content.html#what-is-a-conditional-statement",
+    "relUrl": "/content/content.html#what-is-a-conditional-statement"
+  },"6": {
     "doc": "Workshop",
     "title": "Workshop",
-    "content": "Workshop content . ",
+    "content": " ",
     "url": "http://localhost:4000/content/content.html",
     "relUrl": "/content/content.html"
-  },"3": {
+  },"7": {
     "doc": "Files",
     "title": "Files",
     "content": "files . ",
     "url": "http://localhost:4000/content/files.html",
     "relUrl": "/content/files.html"
-  },"4": {
+  },"8": {
     "doc": "Outline",
-    "title": "Note: this workshop is in development and not yet complete.",
-    "content": "Description… . ",
-    "url": "http://localhost:4000/#note-this-workshop-is-in-development-and-not-yet-complete",
-    "relUrl": "/#note-this-workshop-is-in-development-and-not-yet-complete"
-  },"5": {
+    "title": "Welcome",
+    "content": "Welcome to our workshop on for loops and conditional statements. We hope this workshop assists you in taking your R skills to the next level, allowing you to perform highly customized operations to meet your data analysis needs. ",
+    "url": "http://localhost:4000/#welcome",
+    "relUrl": "/#welcome"
+  },"9": {
     "doc": "Outline",
     "title": "Learning objectives",
-    "content": "At the end of this workshop, you will be able to: 1. 2. 3. ",
+    "content": "At the end of this workshop, you will be able to: . | Perform advanced, custom operations in R to manipulate and analyze data | Expand knowledge, capability, and flexibility with base R | Be able to create a for loop and conditional statement | . Please note that we expect a moderate level of experience in R for this workshop. If you are a beginner, we still welcome you to follow along. ",
     "url": "http://localhost:4000/#learning-objectives",
     "relUrl": "/#learning-objectives"
-  },"6": {
+  },"10": {
     "doc": "Outline",
     "title": "Schedule",
-    "content": "| 0:00 | Welcome and using Zoom | . | 0:05 | Introduction | . | 0:15 |   | . | 0:30 |   | . | 0:45 |   | . | 1:00 | Wrap-up and Discussion | . ",
+    "content": "| 0:00 | Welcome and using Zoom | . | 0:05 | Introduction | . | 0:10 | For loops | . | 0:40 | Conditional statements | . | 1:00 | Wrap-up and Discussion (optional extra time) | . ",
     "url": "http://localhost:4000/#schedule",
     "relUrl": "/#schedule"
-  },"7": {
+  },"11": {
     "doc": "Outline",
     "title": "Resources",
-    "content": ". | [eg. link to external slides] | . ",
+    "content": ". | Additional material on loops, nested loops, and conditional statements | Research commons consultations | . ",
     "url": "http://localhost:4000/#resources",
     "relUrl": "/#resources"
-  },"8": {
+  },"12": {
     "doc": "Outline",
     "title": "Outline",
     "content": " ",
     "url": "http://localhost:4000/",
     "relUrl": "/"
-  },"9": {
-    "doc": "Introduction",
-    "title": "Introduction",
-    "content": "Placeholder for first page of lesson . ",
-    "url": "http://localhost:4000/content/introduction.html",
-    "relUrl": "/content/introduction.html"
-  },"10": {
+  },"13": {
     "doc": "Land acknowledgement",
     "title": "Land acknowledgement",
     "content": "Before beginning the workshop, we’d like to acknowledge the indigenous lands where we are located. The UBC Vancouver campus is located on the traditional, ancestral, and unceded territory of the xʷməθkʷəy̓əm (Musqueam) peoples. Map of Musqueam territory from Native Land Digital . Please take a moment to explore native-land.ca so that you can visualize the indigenous territories, languages, and treaties in your area. ",
     "url": "http://localhost:4000/land-acknowledgement.html",
     "relUrl": "/land-acknowledgement.html"
-  },"11": {
+  },"14": {
     "doc": "Participating online",
     "title": "Participating online",
     "content": "Active participation enlivens the session with other voices and perspectives. We encourage you to engage with instructors and with each other. Microphones are muted by default to improve audio quality and recording is disabled to preserve participant privacy. The Zoom toolbar provides several ways to be part of the conversation: . ",
     "url": "http://localhost:4000/online.html",
     "relUrl": "/online.html"
-  },"12": {
+  },"15": {
     "doc": "Participating online",
     "title": "Reactions menu",
     "content": "Open the Reactions menu and click an icon to communicate with the instructors. Use this to answer yes/no questions or to raise your hand when instructors invite you to ask a question, comment, or share your screen. ",
     "url": "http://localhost:4000/online.html#reactions-menu",
     "relUrl": "/online.html#reactions-menu"
-  },"13": {
+  },"16": {
     "doc": "Participating online",
     "title": "Chat window",
     "content": "Use the Chat window to comment or ask a question at any time. Instructors will do their best to respond, sometimes waiting for a break in the lesson to do so. The Chat window is a good place to report problems with your audio connection. Instructors may also use it to share links to material mentioned in the session. ",
     "url": "http://localhost:4000/online.html#chat-window",
     "relUrl": "/online.html#chat-window"
-  },"14": {
-    "doc": "Participating online",
-    "title": "Share your screen",
-    "content": "In some cases instructors may invite you to share your screen. Raise your hand to indicate that you’re ready to share. When called upon click Share screen, select a window to display, and click Share. ",
-    "url": "http://localhost:4000/online.html#share-your-screen",
-    "relUrl": "/online.html#share-your-screen"
-  },"15": {
-    "doc": "Participating online",
-    "title": "Contribute to the Whiteboard",
-    "content": "The Whiteboard is a collaborative space that everyone can annotate with drawings and text. When the whiteboard is shared click View options and select Annotate. This opens the annotation toolbar. Drawings and text you add to the screen will be visible to everyone in the session or breakout room. ",
-    "url": "http://localhost:4000/online.html#contribute-to-the-whiteboard",
-    "relUrl": "/online.html#contribute-to-the-whiteboard"
   }
 }
