@@ -1,7 +1,10 @@
 ---
 layout: default
 title: Introduction
-nav_order: 4
+nav_order: 5
+parent: Workshop
+has_toc: false
 ---
+
 # Introduction
 Placeholder for first page of lesson
