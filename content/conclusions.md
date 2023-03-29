@@ -10,7 +10,7 @@ has_toc: false
 <br/>
 For loops and conditional statements are powerful tools for customized data analysis operations to fit your unique needs. They cut down the length of your code, and can fill the role of functions when they do not meet your needs. 
 
-We have gone over relatively simple cases today that could probably be accomplished through a package, for the purpose of instruction. The tools you learned today are incredibly powerful however when there is no suitable package for a particular task.
+We have gone over relatively simple cases today that could probably be accomplished through a package/function, for the purpose of instruction. The tools you learned today are incredibly powerful however when there is no suitable package/function for a particular task.
 
 ## Learning objectives
 
