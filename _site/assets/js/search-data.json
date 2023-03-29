@@ -7,7 +7,7 @@
   },"1": {
     "doc": "Conclusions",
     "title": "Conclusions",
-    "content": "For loops and conditional statements are powerful tools for customized data analysis operations to fit your unique needs. They cut down the length of your code, and can fill the role of functions when they do not meet your needs. ",
+    "content": "For loops and conditional statements are powerful tools for customized data analysis operations to fit your unique needs. They cut down the length of your code, and can fill the role of functions when they do not meet your needs. We have gone over relatively simple cases today that could probably be accomplished through a package, for the purpose of instruction. The tools you learned today are incredibly powerful however when there is no suitable package for a particular task. ",
     "url": "http://localhost:4000/content/conclusions.html",
     "relUrl": "/content/conclusions.html"
   },"2": {
@@ -42,59 +42,65 @@
     "relUrl": "/content/content.html"
   },"7": {
     "doc": "Files",
+    "title": "Workshop files",
+    "content": "Workshop file . Workshop file (with answers) . ",
+    "url": "http://localhost:4000/content/files.html#workshop-files",
+    "relUrl": "/content/files.html#workshop-files"
+  },"8": {
+    "doc": "Files",
     "title": "Files",
-    "content": "files . ",
+    "content": " ",
     "url": "http://localhost:4000/content/files.html",
     "relUrl": "/content/files.html"
-  },"8": {
+  },"9": {
     "doc": "Outline",
     "title": "Welcome",
     "content": "Welcome to our workshop on for loops and conditional statements. We hope this workshop assists you in taking your R skills to the next level, allowing you to perform highly customized operations to meet your data analysis needs. ",
     "url": "http://localhost:4000/#welcome",
     "relUrl": "/#welcome"
-  },"9": {
+  },"10": {
     "doc": "Outline",
     "title": "Learning objectives",
     "content": "At the end of this workshop, you will be able to: . | Perform advanced, custom operations in R to manipulate and analyze data | Expand knowledge, capability, and flexibility with base R | Be able to create a for loop and conditional statement | . Please note that we expect a moderate level of experience in R for this workshop. If you are a beginner, we still welcome you to follow along. ",
     "url": "http://localhost:4000/#learning-objectives",
     "relUrl": "/#learning-objectives"
-  },"10": {
+  },"11": {
     "doc": "Outline",
     "title": "Schedule",
-    "content": "| 0:00 | Welcome and using Zoom | . | 0:05 | Introduction | . | 0:10 | For loops | . | 0:40 | Conditional statements | . | 1:00 | Wrap-up and Discussion (optional extra time) | . ",
+    "content": "| 0:00 | Welcome and using Zoom | . | 0:05 | Introduction | . | 0:10 | For loops | . | 0:40 | Conditional statements | . | 1:00 | Wrap-up and Discussion, optional 30mins practice | . ",
     "url": "http://localhost:4000/#schedule",
     "relUrl": "/#schedule"
-  },"11": {
+  },"12": {
     "doc": "Outline",
     "title": "Resources",
     "content": ". | Additional material on loops, nested loops, and conditional statements | Research commons consultations | . ",
     "url": "http://localhost:4000/#resources",
     "relUrl": "/#resources"
-  },"12": {
+  },"13": {
     "doc": "Outline",
     "title": "Outline",
     "content": " ",
     "url": "http://localhost:4000/",
     "relUrl": "/"
-  },"13": {
+  },"14": {
     "doc": "Land acknowledgement",
     "title": "Land acknowledgement",
     "content": "Before beginning the workshop, we’d like to acknowledge the indigenous lands where we are located. The UBC Vancouver campus is located on the traditional, ancestral, and unceded territory of the xʷməθkʷəy̓əm (Musqueam) peoples. Map of Musqueam territory from Native Land Digital . Please take a moment to explore native-land.ca so that you can visualize the indigenous territories, languages, and treaties in your area. ",
     "url": "http://localhost:4000/land-acknowledgement.html",
     "relUrl": "/land-acknowledgement.html"
-  },"14": {
+  },"15": {
     "doc": "Participating online",
     "title": "Participating online",
     "content": "Active participation enlivens the session with other voices and perspectives. We encourage you to engage with instructors and with each other. Microphones are muted by default to improve audio quality and recording is disabled to preserve participant privacy. The Zoom toolbar provides several ways to be part of the conversation: . ",
     "url": "http://localhost:4000/online.html",
     "relUrl": "/online.html"
-  },"15": {
+  },"16": {
     "doc": "Participating online",
     "title": "Reactions menu",
     "content": "Open the Reactions menu and click an icon to communicate with the instructors. Use this to answer yes/no questions or to raise your hand when instructors invite you to ask a question, comment, or share your screen. ",
     "url": "http://localhost:4000/online.html#reactions-menu",
     "relUrl": "/online.html#reactions-menu"
-  },"16": {
+  },"17": {
     "doc": "Participating online",
     "title": "Chat window",
     "content": "Use the Chat window to comment or ask a question at any time. Instructors will do their best to respond, sometimes waiting for a break in the lesson to do so. The Chat window is a good place to report problems with your audio connection. Instructors may also use it to share links to material mentioned in the session. ",

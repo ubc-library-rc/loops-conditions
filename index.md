@@ -24,7 +24,7 @@ Please note that we expect a moderate level of experience in R for this workshop
 | 0:05 | Introduction |  
 | 0:10 | For loops |
 | 0:40 | Conditional statements |   
-| 1:00 | Wrap-up and Discussion (optional extra time) |
+| 1:00 | Wrap-up and Discussion, optional 30mins practice |
 
 
 ## Resources

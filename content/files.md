@@ -6,4 +6,8 @@ parent: Workshop
 has_toc: false
 ---
 
-files 
+# Workshop files
+
+[Workshop file](loops_conditions.Rmd)
+
+[Workshop file (with answers)](loops_conditions_answers.Rmd)
