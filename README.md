@@ -1,4 +1,4 @@
-# Name of workshop
+# For loops and conditional statements in R
 ### UBC Library Research Commons
     
 Link to workshop: https://ubc-library-rc.github.io/loops-conditions/
