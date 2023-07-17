@@ -13,7 +13,7 @@ Workshop overview:
 -   Conditional (if/else) statements
 -   Additional practice problems
 
-###GETTING STARTED
+# 0. GETTING STARTED
 
 ```{r}
 #install.packages('openintro')
@@ -52,7 +52,7 @@ midterms <- midterms_house
 head(midterms)
 ```
 
-###FOR LOOPS
+# 1. FOR LOOPS
 
 For loop's basic structure
 
@@ -138,7 +138,7 @@ max(midterms$house_change[midterms$party == 'Republican'])
 
 individual components we need to build our for loop:
 
-1.  unique(midterms$party)
+1.  unique(midterms\$party)
 2.  max(midterms$house_change[midterms$party == Party])
 3.  for loop struture:
 
@@ -155,14 +155,14 @@ for (i in unique(midterms$party)){
 #print(max(countries$gdpPercap[countries$country == i]))
 ```
 
-#PRACTICE TOGETHER
+## 1.1 PRACTICE TOGETHER
 
 Another example, with a different dataset: finding the average latitude
-for each storm in the 'storms' dataset 
+for each storm in the 'storms' dataset
 
 individual components we need to build our for loop:
 
-1.  unique(storms$name)
+1.  unique(storms\$name)
 2.  mean(storms$lat[storms$name == Storm name])
 3.  for loop struture:
 
@@ -176,7 +176,7 @@ head(storms)
 
 ```
 
-#PRACTICE:
+### 1.1.1PRACTICE:
 
 Using the 'countries' dataset, use a for loop to find the maximum value
 of GDP per capita (gdpPercap) for each country
@@ -188,7 +188,8 @@ of GDP per capita (gdpPercap) for each country
 
 Saving the output of your for loop:
 
-lets create a new dataset called 'country_sum', of summary variables by country, with country as one column and max gdp per capita as another
+lets create a new dataset called 'country_sum', of summary variables by
+country, with country as one column and max gdp per capita as another
 
 ```{r}
 #creating empty vectors for the values we want to store
@@ -219,7 +220,7 @@ head(country_sum)
 #there are other ways of doing this, by creating a dataframe and using that directly in the for-loop, but I think this format is more beginner-friendly 
 ```
 
-#PRACTICE:
+### 1.1.2 PRACTICE:
 
 modify the code below to create a new dataframe with two columns: Party,
 and max midterms house change (x in the example code). Name your columns
@@ -237,7 +238,7 @@ for (i in unique(midterms$party)){
 
 ```
 
-IF/ELSE STATEMENTS
+# 2. IF/ELSE STATEMENTS
 
 Basic structure of an if statement:
 
@@ -249,11 +250,7 @@ if (logical statement){ operation if true} else{operation if false}
 
 examples of logical statements:
 
-x > 5 
-x == 4 
-x == "cat" 
-x != 0
-x %in% c("cat", "dog", "mouse")
+x \> 5 x == 4 x == "cat" x != 0 x %in% c("cat", "dog", "mouse")
 
 Simple example:
 
@@ -293,7 +290,7 @@ if(midterms$party[i] == 'Republican'){
 head(midterms)
 ```
 
-###PRACTICE
+## 2.1 PRACTICE
 
 ```{r}
 #e.g., create a binary variable/column in the countries dataset called eurasia_bin, with values of 'Eurasia' and 'Elsewhere', based on this list (it is not totally accurate, but suitable for the purpose of practice): 
@@ -304,11 +301,14 @@ eurasia <- c("Europe", "Asia")
 
 #answer:
 ```
-###BONUS QUESTION
 
-Loop through the storms dataset and calculate mean latitude for each storm. Store this in a new dataframe with storm name. 
+# 3. BONUS QUESTION
 
-Then, create a new grouping variable for latitude, with three levels: 'North' (>30), 'Central' (>=20, <=30), 'South' (<20). 
+Loop through the storms dataset and calculate mean latitude for each
+storm. Store this in a new dataframe with storm name.
+
+Then, create a new grouping variable for latitude, with three levels:
+'North' (\>30), 'Central' (\>=20, \<=30), 'South' (\<20).
 
 ```{r}
 #answer: 

@@ -12,7 +12,7 @@ Workshop overview:
 - Conditional (if/else) statements
 - Additional practice problem
 
-###GETTING STARTED 
+# 0. GETTING STARTED 
 
 ```{r}
 #install.packages('openintro')
@@ -51,7 +51,7 @@ head(midterms)
 ?midterms_house #look at dataset documentation 
 ```
 
-###FOR LOOPS
+# 1. FOR LOOPS
 
 For loop's basic structure 
 
@@ -151,7 +151,7 @@ for (i in unique(midterms$party)){
 #print(max(countries$gdpPercap[countries$country == i]))
 ```
 
-#PRACTICE TOGETHER 
+## 1.1 PRACTICE TOGETHER 
 
 Another example, with a different dataset: 
 finding the average latitude for each storm in the dataset
@@ -178,7 +178,7 @@ for (i in unique(storms$name)){
 }
 ```
 
-#PRACTICE: 
+### 1.1.1 PRACTICE: 
 
 Using the 'countries' dataset, use a for loop to find the maximum value of GDP per capita (gdpPercap) for each country
 
@@ -225,7 +225,7 @@ head(country_sum)
 #there are other ways of doing this, by creating a dataframe and using that directly in the for-loop, but I think this format is more beginner-friendly 
 ```
 
-#PRACTICE: 
+### 1.1.2 PRACTICE: 
 
 modify the code below to create a new dataframe with two columns: Party, and max midterms house change (x in the example code). Name your columns however you'd like. 
 
@@ -253,7 +253,7 @@ Max_Change_DF
 
 ```
 
-IF/ELSE STATEMENTS  
+# 2. IF/ELSE STATEMENTS  
 
 Basic structure of an if statement: 
 
@@ -312,7 +312,7 @@ if(midterms$party[i] == 'Republican'){
 head(midterms)
 ```
 
-###PRACTICE
+## 2.1 PRACTICE
 
 ```{r}
 #e.g., create a binary variable/column in the countries dataset called eurasia_bin, with values of 'Eurasia' and 'Elsewhere', based on this list (it is not totally accurate, but suitable for the purpose of practice): 
@@ -333,7 +333,7 @@ if(countries$continent[i] %in% eurasia){
 countries
 ```
 
-###BONUS QUESTION
+# 3. BONUS QUESTION
 
 Loop through the storms dataset and calculate mean latitude for each storm. Store this in a new dataframe with storm names.
 Then, create a new grouping variable for latitude, with three levels: 'North' (>30), 'Central' (>=20, <=30), 'South' (<20). 

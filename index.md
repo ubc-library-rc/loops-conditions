@@ -30,3 +30,6 @@ Please note that we expect a moderate level of experience in R for this workshop
 ## Resources
 * [Additional material on loops, nested loops, and conditional statements](https://www.dataquest.io/blog/for-loop-in-r/)
 * [Research commons consultations](https://libcal.library.ubc.ca/appointments/research_commons)
+
+
+<p style="color:grey; font-size:14px; padding-top: 2em"> This workshop was developed by Jared Connoy (Author) and Ashley Yue Mao (Contributor).
