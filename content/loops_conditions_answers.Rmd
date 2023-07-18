@@ -149,6 +149,13 @@ for (i in unique(midterms$party)){
 
 #can save as an object or embed max within print , i.e 
 #print(max(countries$gdpPercap[countries$country == i]))
+
+#besides, as it is not clear which value correspond to which party
+#you can print i as well
+for (i in unique(midterms$party)){
+  x <- max(midterms$house_change[midterms$party == i])
+  print(c(i, x))
+}
 ```
 
 ## 1.1 PRACTICE TOGETHER 
@@ -187,7 +194,7 @@ Using the 'countries' dataset, use a for loop to find the maximum value of GDP p
 
 for (i in unique(countries$country)){
   x <- max(countries$gdpPercap[countries$country == i])
-  print(x)
+  print(c(i, x))
 }
 
 ```
@@ -264,7 +271,8 @@ can be expanded to an if/else statement:
   
   if (logical statement){
    operation if true} 
-   else{operation if false}
+   else{
+   operation if false}
    
 examples of logical statements: 
 
@@ -370,12 +378,14 @@ storms_df
 ```{r, eval=FALSE}
 #HINT: NESTED CONDITIONAL STATEMENT STRCUTURE:
 
-if(condition 1){
-# execute only if condition 1 satisfies
-if(condition 2){ 
-# execute if both condition 1 and 2 satisfy
+if(condition 1) {
+  # execute only if condition 1 satisfies
+  if (condition 2) {
+    # execute if both condition 1 and 2 satisfy
   }
-}else{}
+} 
+else {
+}
 ```
 
 

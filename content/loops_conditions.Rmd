@@ -153,6 +153,13 @@ for (i in unique(midterms$party)){
 
 #can save as an object or embed max within print , i.e 
 #print(max(countries$gdpPercap[countries$country == i]))
+
+#besides, as it is not clear which value correspond to which party
+#you can print i as well
+for (i in unique(midterms$party)){
+  x <- max(midterms$house_change[midterms$party == i])
+  print(c(i, x))
+}
 ```
 
 ## 1.1 PRACTICE TOGETHER
@@ -240,17 +247,25 @@ for (i in unique(midterms$party)){
 
 # 2. IF/ELSE STATEMENTS
 
-Basic structure of an if statement:
+Basic structure of an if statement: 
 
-if (logical statement){ operation true}
+  if (logical statement){
+   operation true} 
+   
+can be expanded to an if/else statement: 
+  
+  if (logical statement){
+   operation if true} 
+   else{
+   operation if false}
+   
+examples of logical statements: 
 
-can be expanded to an if/else statement:
-
-if (logical statement){ operation if true} else{operation if false}
-
-examples of logical statements:
-
-x \> 5 x == 4 x == "cat" x != 0 x %in% c("cat", "dog", "mouse")
+x > 5 
+x == 4 
+x == "cat" 
+x != 0
+x %in% c("cat", "dog", "mouse")
 
 Simple example:
 
@@ -280,9 +295,10 @@ if/else statement become very useful when embedded within a for loop:
 
 midterms$binary <- NA
 
-for (i in 1:nrow(midterms)){
-if(midterms$party[i] == 'Republican'){
-  midterms$binary[i] = 1} else {
+for (i in 1:nrow(midterms)) {
+  if (midterms$party[i] == 'Republican') {
+    midterms$binary[i] = 1
+  } else {
     midterms$binary[i] = 0
   }
 }
