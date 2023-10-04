@@ -138,7 +138,7 @@ max(midterms$house_change[midterms$party == 'Republican'])
 
 individual components we need to build our for loop:
 
-1.  unique(midterms\$party)
+1.  unique(midterms$party)
 2.  max(midterms$house_change[midterms$party == Party])
 3.  for loop struture:
 
