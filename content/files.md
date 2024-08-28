@@ -10,4 +10,4 @@ has_toc: false
 
 [Workshop file](loops_conditions.Rmd)
 
-[Workshop file (with answers)](loops_conditions_answers.Rmd)
+[Answers only](loops_conditions_answers.Rmd)
