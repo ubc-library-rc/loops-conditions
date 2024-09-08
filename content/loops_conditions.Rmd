@@ -252,6 +252,21 @@ if (x > 5){
   print("x is less than 5")
 }
 ```
+Multiple if statements can be joined together 
+
+```{r}
+## try different values of a
+a=3
+
+if (a > 5) {
+  print("a is greater than 5")
+} else if (a == 5) {  ## Note the space between "else" and "if" here. 
+  print("a = 5")
+} else {
+  print("a is smaller than 5")
+}
+
+```
 
 if/else statement become very useful when embedded within a for loop:
 
