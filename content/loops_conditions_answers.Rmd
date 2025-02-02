@@ -1,102 +1,65 @@
-### 1.1.1 PRACTICE: 
 
-Using the 'countries' dataset, use a for loop to find the maximum value of GDP per capita (gdpPercap) for each country
+## PRACTICE 1
+
+Find the max weight for the two treatment groups
 
 ```{r}
-#answer:
+# ANSWER
+## treatment 1
+max(plants$weight[plants$group=="trt1"])
 
-for (i in unique(countries$country)){
-  x <- max(countries$gdpPercap[countries$country == i])
-  print(c(i, x))
+## treatment 2
+max(plants$weight[plants$group=="trt2"])
+```
+
+
+## PRACTICE 2
+
+Another example, with a different dataset, iris. Find the mean petal length for each species
+
+```{r}
+## create an empty dataframe
+meandf = NULL
+
+## for loop
+for (i in unique(iris$Species)){
+  
+  ## operation 
+  x <- mean(iris$Petal.Length[iris$Species == i])
+  
+  ## make x into a dataframe to be able to combine it to the existing output dataframe
+  x = as.data.frame(x)
+  
+  ## add a group indicator to x
+  x$iris_species = i
+  
+  ## add current loop iteration output to exisiting output
+  meandf = rbind.fill(meandf, x)
+  
 }
 
 ```
 
 
-### 1.1.2 PRACTICE: 
-
-modify the code below to create a new dataframe with two columns: Party, and max midterms house change (x in the example code). Name your columns however you'd like. 
+## PRACTICE 3
 
 ```{r}
+## seep what the specis are
+print(c(unique(iris$Species)))
 
-#original code:
-for (i in unique(midterms$party)){
-  x <- max(midterms$house_change[midterms$party == i])
-  print(x)
-}
+## binary variable
+iris$v_start <- NA
 
-#answer: 
-party <- 0
-max_change <- 0
-index <- 0
-
-for (i in unique(midterms$party)){
-  index <- index + 1 
-  max_change[index] <- max(midterms$house_change[midterms$party == i])
-  party[index] <- i
-}
-
-Max_Change_DF <- data.frame(party, max_change)
-Max_Change_DF
-
-```
-
-
-## 2.1 PRACTICE
-
-```{r}
-#e.g., create a binary variable/column in the countries dataset called eurasia_bin, with values of 'Eurasia' and 'Elsewhere', based on this list (it is not totally accurate, but suitable for the purpose of practice): 
-
-eurasia <- c("Europe", "Asia")
-
-#(hint: you need to use %in%)
-
-countries$eurasia_bin <- NA
-
-for (i in 1:nrow(countries)){
-if(countries$continent[i] %in% eurasia){
-  countries$eurasia_bin[i] = 'Eurasia'} else {
-    countries$eurasia_bin[i] = 'Elsewhere'
+## for loop
+for (i in 1:nrow(iris)) {
+  if (iris$Species[i] == 'setosa') {
+    iris$v_start[i] = 0 ## 0 for no v
+  } else {
+    iris$v_start[i] = 1 ## 1 for v
   }
 }
 
-countries
+
 ```
-
-# 3. BONUS QUESTION
-
-Loop through the storms dataset and calculate mean latitude for each storm. Store this in a new dataframe with storm names.
-Then, create a new grouping variable for latitude, with three levels: 'North' (>30), 'Central' (>=20, <=30), 'South' (<20). 
-
-```{r}
-#answer: 
-index <- 1 
-mean_lat <- 0 
-name <- 0 
-
-for (i in unique(storms$name)){
-  mean_lat[index]<-mean(storms$lat[storms$name == i])
-  name[index] <- i
-  index <- index + 1 
-}
-
-storms_df <- data.frame(name, mean_lat)
-
-storms_df$location <- 0
-
-for (i in 1:nrow(storms_df)){
-  if (storms_df$mean_lat[i] < 30){
-    storms_df$location[i] = 'South' 
-    if (storms_df$mean_lat[i] > 20){
-      storms_df$location[i] = 'Central' 
-    }
-  }
-  else{ storms_df$location[i] = 'North'}
-}
-
-storms_df
-```
-
-
 
 

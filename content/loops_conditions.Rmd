@@ -7,32 +7,16 @@ Workshop overview:
 # 0. GETTING STARTED
 
 ```{r}
-library(openintro) #includes practice dataset
-library(gapminder) #includes practice dataset 
 library(tidyverse) #data manipulation
+library(plyr) #to save loop output in dataframe 
 
 ```
 
-We will be using three datasets in this workshop:
-
-(1) 'countries' from the gapminder package - Macroeconomic (e.g. GDP per capita) and demographic (e.g. population) data for every country in the world, by year
+We will be using two built in R dataset in this workshop: 1. the PlantGrowth dataset. It has information about plant weight by three groups (1 control and 2 treatment groups). 2. the iris dataset, which has information about iris species petal sizes.
 
 ```{r}
-countries <- gapminder # create a data frame
-head(countries) #see the first six rows of the dataframe
-```
-
-(2) 'storms' from the dplyr package - Location and weather data for hurricanes in the US
-
-```{r}
-head(storms)
-```
-
-(3) 'midterms' from the openintro package - midterm election results by year, party, and unemployment rate
-
-```{r}
-midterms <- midterms_house
-head(midterms)
+plants <- PlantGrowth# create a data frame
+head(plants) #see the first six rows of the dataframe
 ```
 
 # 1. FOR LOOPS
@@ -55,18 +39,21 @@ for (i in numbers){
 }
 
 
+```
+
+Add a delay in the loop
+
+```{r}
+
 for (i in numbers){
   print(i)
   Sys.sleep(0.5) #this staggers each output by 0.5 seconds
 }
-
 ```
-In this illustrative example, you need to include print, or the loop will run without producing output. 
 
-Why include print? It is helpful to see how many iterations of the loop have been completed to see if
-1. The loop is still going and not stuck. 
-2. To calculate the amount of time left for the code to finish running. 
+In this illustrative example, you need to include print, or the loop will run without producing output.
 
+Why include print? It is helpful to see how many iterations of the loop have been completed to see if 1. The loop is still going and not stuck. 2. To calculate the amount of time left for the code to finish running.
 
 ```{r}
 matrix <- matrix(nrow = 3, ncol = 5, c(1:15))
@@ -80,136 +67,86 @@ for (i in matrix){
 dataframe example:
 
 ```{r}
-###looping through the unique political parties in our midterms dataset
-for (i in unique(midterms$party)){
+###looping through the unique treatment groups
+for (i in unique(plants$group)){
   print(i)
 }
 
+```
+
+You can rerplace i with something more meaningful
+
+```{r}
 #note i is an object and never in quotes. i is commonly-used 
 #but arbitrary. You can make it more meaningful to you if thats easier, e.g.: 
 
-for (Parties in unique(midterms$party)){
-  print(Parties)
+for (treatment in unique(plants$group)){
+  print(treatment)
 }
 ```
 
-Applying an operation by looping through the parties in the midterms dataset
+Applying an operation by looping through the dataset
 
 ```{r}
-###finding the maximum value of house_change for each party
-#if we wanted to do this for ONE party, e.g. Republican 
-
-max(midterms$house_change[midterms$party == 'Republican'])
+###finding the maximum weight for the control group
+max(plants$weight[plants$group=="ctrl"])
 
 #uses square brackets to subset, will be using this throughout the workshop
 ```
 
-individual components we need to build our for loop:
+## PRACTICE 1
 
-1.  unique(midterms\$party)
-2.  max(midterms$house_change[midterms$party == Party])
-3.  for loop struture:
-
-for (i in vector){ operation }
+Find the max weight for the two treatment groups
 
 ```{r}
-#building this into a for loop, for all parties
-for (i in unique(midterms$party)){
-  x <- max(midterms$house_change[midterms$party == i])
-  print(x)
-}
 
-#can save as an object or embed max within print , i.e 
-#print(max(countries$gdpPercap[countries$country == i]))
-
-#besides, as it is not clear which value correspond to which party
-#you can print i as well
-for (i in unique(midterms$party)){
-  x <- max(midterms$house_change[midterms$party == i])
-  print(c(i, x))
-}
 ```
-
-## 1.1 PRACTICE TOGETHER
-
-Another example, with a different dataset: finding the average latitude for each storm in the 'storms' dataset
 
 individual components we need to build our for loop:
 
-1.  unique(storms\$name)
-2.  mean(storms$lat[storms$name == Storm name])
-3.  for loop struture:
-
-for (i in vector){ operation }
+1.  a list to cycle though: unique(plants\$group)
+2.  an operation inside the loop: x \<- max(plants$weight[plants$group == i])
+3.  for loop structure: for(i in list){}
 
 ```{r}
-#storms dataset, from dplyr
-head(storms)
-
-#finding the average latitude for each storm in the dataset 
-for (i in unique(storms$name)){
-  print(i)
-  x <- mean(storms$lat[storms$name == i])
+#building this into a for loop, for all treatment groups
+for (i in unique(plants$group)){
+  x <- max(plants$weight[plants$group == i])
   print(x)
 }
 
 ```
 
-### 1.1.1PRACTICE:
-
-Using the 'countries' dataset, use a for loop to find the maximum value of GDP per capita (gdpPercap) for each country
+Can save the output in a dataframe
 
 ```{r}
-#answer: 
+## create an empty dataframe
+maxdf = NULL
 
+## for loop
+for (i in unique(plants$group)){
+  
+  ## operation from before
+  x <- max(plants$weight[plants$group == i])
+  
+  ## make x into a dataframe to be able to combine it to the existing output dataframe
+  x = as.data.frame(x)
+  
+  ## add a group indicator to x
+  x$treatment_group = i
+  
+  ## add current loop iteration output to exisiting output
+  maxdf = rbind.fill(maxdf, x)
+  
+}
 ```
 
-Saving the output of your for loop:
+## PRACTICE 2
 
-lets create a new dataset called 'country_sum', of summary variables by country, with country as one column and max gdp per capita as another
-
-```{r}
-#creating empty vectors for the values we want to store
-country <- 0
-maxgdp <- 0
-
-#to store values in a vector, we need to create a count, to add values to a vector as we move through each iteration of the loop 
-index <- 1
-
-#vector[x] points to position x in the vector
-
-for (i in unique(countries$country)){
-  maxgdp[index] <- max(countries$gdpPercap[countries$country == i])
-    #create vector of max gdpPercap values by country 
-  country[index] <- i #create vectors of countries
-  print(index) #print index at each iteration (not required)
-  index <- index + 1 #add one to the index to avoid replacement
-}
-
-#look at our new vectors
-head(maxgdp)
-head(country)
-
-#combine vectors into a dataframe
-country_sum <- data.frame(country, maxgdp)
-head(country_sum)
-
-#there are other ways of doing this, by creating a dataframe and using that directly in the for-loop, but I think this format is more beginner-friendly 
-```
-
-### 1.1.2 PRACTICE:
-
-modify the code below to create a new dataframe with two columns: Party, and max midterms house change (x in the example code). Name your columns however you'd like.
+Another example, with a different dataset, iris. Find the mean petal length for each species
 
 ```{r}
 
-#original code:
-for (i in unique(midterms$party)){
-  x <- max(midterms$house_change[midterms$party == i])
-  print(x)
-}
-
-#answer: 
 
 ```
 
@@ -225,13 +162,9 @@ if (logical statement){ operation if true} else{ operation if false}
 
 examples of logical statements:
 
-x > 5 
-x == 4 
-x == "cat" 
-x != 0 
-x %in% c("cat", "dog", "mouse")
+x \> 5 x == 4 x == "cat" x != 0 x %in% c("cat", "dog", "mouse")
 
-Note: an empty else statement "else{}" means "do nothing" 
+Note: an empty else statement "else{}" means "do nothing"
 
 Simple example:
 
@@ -243,6 +176,11 @@ if (x > 5){
   print("x is greater than 5")
 }
 
+```
+
+Other example
+
+```{r}
 x = 4 #set x to 4 
 
 #add an else statement 
@@ -252,7 +190,8 @@ if (x > 5){
   print("x is less than 5")
 }
 ```
-Multiple if statements can be joined together 
+
+Multiple if statements can be joined together
 
 ```{r}
 ## try different values of a
@@ -272,56 +211,38 @@ if/else statement become very useful when embedded within a for loop:
 
 ```{r}
 
-#e.g., create a binary variable for Republican (1) and Democrat (0)
+#e.g., create a binary variable for control or treatment group in the plants dataset
 
-midterms$binary <- NA
+plants$category <- NA
 
-for (i in 1:nrow(midterms)) {
-  if (midterms$party[i] == 'Republican') {
-    midterms$binary[i] = 1
+for (i in 1:nrow(plants)) {
+  if (plants$group[i] == 'ctrl') {
+    plants$category[i] = 0 ## 0 for control
   } else {
-    midterms$binary[i] = 0
+    plants$category[i] = 1 ## 1 for treatment
   }
 }
 
-head(midterms)
+head(plants)
 ```
 
-Note: for loops will stop running if they produce an error. To keep a for loop going, add tryCatch inside the loop. This is advanced, so we don't go into it, but it may be useful for you as your loops become more advanced https://cran.r-project.org/web/packages/tryCatchLog/vignettes/tryCatchLog-intro.html 
+Note: for loops will stop running if they produce an error. To keep a for loop going, add tryCatch inside the loop. This is advanced, so we don't go into it, but it may be useful for you as your loops become more advanced <https://cran.r-project.org/web/packages/tryCatchLog/vignettes/tryCatchLog-intro.html>
 
-## 2.1 PRACTICE
+## PRACTICE 3
 
 ```{r}
-#e.g., create a binary variable/column in the countries dataset called eurasia_bin, with values of 'Eurasia' and 'Elsewhere', based on this list (it is not totally accurate, but suitable for the purpose of practice): 
 
-eurasia <- c("Europe", "Asia")
-
-#(hint: you need to use %in%)
-
-#answer:
-```
-
-# 3. BONUS QUESTION
-
-Loop through the storms dataset and calculate mean latitude for each storm. Store this in a new dataframe with storm name.
-
-Then, create a new grouping variable for latitude, with three levels: 'North' (>30), 'Central' (>=20, <=30), 'South' (<20).
-
-```{r}
-#answer: 
 
 ```
-
 
 # 4. Tips for how to build loops
 
 Build parts of the loop individually.
-- Check that the loop cycles correctly, this is why we use print!
-- If saving output, make sure that each iteration of the loop have a unique identifier to link the output with each data subset. For example, if your ANOVA is for different metrics, you would want to know what data each ANOVA output links to. 
-- Does the code inside the loop work? For example, if you have code for an ANOVA inside the loop, can you use that code to run an ANOVA outside of the loop.
-- To troubleshoot the loop, you can run the lines inside the {} individually. Lets say the structure of the loop for the example in section 1.1.2 PRACTICE (line 207), we can set i = "Democrat" and run the lines 208 and 209 one by one. This technique is helpful to find where exactly in the loop the issues arise. 
 
+-   Check that the loop cycles correctly, this is why we use print!
 
+-   If saving output, make sure that each iteration of the loop have a unique identifier to link the output with each data subset. For example, if your ANOVA is for different metrics, you would want to know what data each ANOVA output links to.
 
+-   Does the code inside the loop work? For example, if you have code for an ANOVA inside the loop, can you use that code to run an ANOVA outside of the loop.
 
-
+-   To troubleshoot the loop, you can run the lines inside the {} individually.
