@@ -12,10 +12,14 @@ library(plyr) #to save loop output in dataframe
 
 ```
 
-We will be using two built in R dataset in this workshop: 1. the PlantGrowth dataset. It has information about plant weight by three groups (1 control and 2 treatment groups). 2. the iris dataset, which has information about iris species petal sizes.
+We will be using two built in R dataset in this workshop:
+
+1\. the PlantGrowth dataset. It has information about plant weight by three groups (1 control and 2 treatment groups).
+
+2\. the iris dataset, which has information about iris species petal sizes.
 
 ```{r}
-plants <- PlantGrowth# create a data frame
+plants <- PlantGrowth # create a data frame
 head(plants) #see the first six rows of the dataframe
 ```
 
@@ -53,7 +57,11 @@ for (i in numbers){
 
 In this illustrative example, you need to include print, or the loop will run without producing output.
 
-Why include print? It is helpful to see how many iterations of the loop have been completed to see if 1. The loop is still going and not stuck. 2. To calculate the amount of time left for the code to finish running.
+Why include print? It is helpful to see how many iterations of the loop have been completed to see if
+
+1\. The loop is still going and not stuck.
+
+2\. To calculate the amount of time left for the code to finish running.
 
 ```{r}
 matrix <- matrix(nrow = 3, ncol = 5, c(1:15))
@@ -74,7 +82,7 @@ for (i in unique(plants$group)){
 
 ```
 
-You can rerplace i with something more meaningful
+You can replace i with something more meaningful
 
 ```{r}
 #note i is an object and never in quotes. i is commonly-used 
@@ -100,13 +108,19 @@ Find the max weight for the two treatment groups
 
 ```{r}
 
+for(i in unique(plants$group)){
+  x <- max(plants$weight[plants$group == i])
+  print(i)
+  print(x)
+}
+
 ```
 
 individual components we need to build our for loop:
 
-1.  a list to cycle though: unique(plants\$group)
-2.  an operation inside the loop: x \<- max(plants$weight[plants$group == i])
-3.  for loop structure: for(i in list){}
+1.  a list to cycle though: `unique(plants$group)`
+2.  an operation inside the loop: `x <- max(plants$weight[plants$group == i])`
+3.  for loop structure: `for(i in list){}`
 
 ```{r}
 #building this into a for loop, for all treatment groups
@@ -143,18 +157,29 @@ for (i in unique(plants$group)){
 
 ## PRACTICE 2
 
-Another example, with a different dataset, iris. Find the mean petal length for each species
+Another example, with a different dataset, `iris`. Find the mean `Petal.Length` for each `Species`
 
 ```{r}
 
+meanpl = NULL
+species_list = c(unique(iris$Species)) 
 
+for (i in species_list){
+  ## find mean
+  x = mean(iris$Petal.Length[iris$Species==i])
+  ## save output
+  x = as.data.frame(x)
+  x$sp = i
+  meanpl = rbind.fill(meanpl, x)
+  
+}
 ```
 
 # 2. IF/ELSE STATEMENTS
 
 Basic structure of an if statement:
 
-if (logical statement){ operation true}
+if (logical statement){operation true}
 
 can be expanded to an if/else statement:
 
@@ -162,7 +187,15 @@ if (logical statement){ operation if true} else{ operation if false}
 
 examples of logical statements:
 
-x \> 5 x == 4 x == "cat" x != 0 x %in% c("cat", "dog", "mouse")
+x \> 5
+
+x == 4
+
+x == "cat"
+
+x != 0
+
+x %in% c("cat", "dog", "mouse")
 
 Note: an empty else statement "else{}" means "do nothing"
 
@@ -229,6 +262,8 @@ head(plants)
 Note: for loops will stop running if they produce an error. To keep a for loop going, add tryCatch inside the loop. This is advanced, so we don't go into it, but it may be useful for you as your loops become more advanced <https://cran.r-project.org/web/packages/tryCatchLog/vignettes/tryCatchLog-intro.html>
 
 ## PRACTICE 3
+
+For the `iris` datastet, identify if the `Species` **starts with a v or not** in a new column.
 
 ```{r}
 
